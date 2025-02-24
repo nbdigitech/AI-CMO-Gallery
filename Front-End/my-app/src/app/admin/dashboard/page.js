@@ -52,7 +52,7 @@ export default function AdminDashboard() {
       <nav className="bg-white shadow-md w-full h-16 flex items-center px-6">
         <div className="flex items-center justify-between w-full px-4">
           <div className="flex items-center gap-3">
-            <img src="/img_1.png" alt="Logo" className="w-10 h-10" />
+            <img src="/CG logo.webp" alt="Logo" className="w-10 h-10" />
             <button className="border p-2 rounded-md text-sm bg-purple-700 text-white hover:bg-purple-800">
               Filter
             </button>

@@ -4,7 +4,7 @@ import { useRouter } from "next/navigation";
 
 export default function AuthPage() {
   const router = useRouter();
-  const images = ["/cg.png", "/imgB.png"];
+  const images = ["/CMpic.png", "/imgB.png"];
   const [currentImage, setCurrentImage] = useState(0);
   const [page, setPage] = useState("login");
   const [showPopup, setShowPopup] = useState(false);
@@ -48,7 +48,6 @@ export default function AuthPage() {
       }
     }
   };
-
   const handleProfileUpdate = () => {
     if (name && email) {
       alert("Profile updated!");
@@ -57,11 +56,9 @@ export default function AuthPage() {
       alert("Please fill all fields.");
     }
   };
-
   const handleSignUp = () => {
     setShowPopup(true); // Show success popup
   };
-
   const handleOtpVerification = () => {
     if (JSON.stringify(otp) === JSON.stringify(correctOtp)) {
       setPage("profile");
@@ -84,9 +81,9 @@ export default function AuthPage() {
   return (
     <div className="  fixed inset-0  flex flex-col md:flex-row w-full h-screen items-center justify-center bg-[#ECECEC] p-10">
       <div className="relative flex flex-col items-center justify-start full-h-screen pt-[41px] "></div>
-      <img src="/CG logo.webp" alt="Logo" className="w-[119px] h-[119px] absolute top-[41px] left-1/4 transform -translate-x-1/4" />
+      <img src="/CG logo.webp" alt="Logo" className="w-[119px] h-[105px] absolute top-[2px] left-1/4 transform -translate-x-1/4" />
       <div className=" absolute fixed top w-[516px] h-[526px] 
-             top-[180px] left-[150px] 
+             top-[140px] left-[140px] 
              radius-[16px] p-[48px] 
              pr-[40px] pb-[56px] pl-[40px] 
              gap-[24px] bg-white shadow-lg rounded-[30px]">
@@ -122,14 +119,14 @@ export default function AuthPage() {
                 <button className="text-[#170645]hover:underline">Terms of Service</button>
             </div>
             </div>
-            <div className="w-[204px] h-[30px] absolute top-[530px] left-[150px] bg-white-500 text-center text-black text-[14px] font-medium leading-[22.4px] tracking-[0px] font-inter whitespace-nowrap flex items-center justify-center mt-auto">
+            <div className="w-[204px] h-[30px] absolute top-[570px] left-[150px] bg-white-500 text-center text-black text-[14px] font-medium leading-[22.4px] tracking-[0px] font-inter whitespace-nowrap flex items-center justify-center mt-auto">
               Initiative By DPR Chhattisgarh
             </div>
           </>
           ) : page === "admin" ? (
             <>
-            <p className="text-xl font-bold text-center text-blue-900">AI Based CMO Gallery</p>
-              <h2 className="text-xl font-bold text-center text-blue-800 mt-4">Admin Login</h2>
+            <p className="text-[32px] font-[Poppins] font-bold leading-[38.4px] tracking-[-0.8px] text-center text-[#170645]">AI Based CMO Gallery</p>
+              <h2 className="text-[32px] font-[Poppins] font-bold leading-[38.4px] tracking-[-0.8px] text-center text-[#170645]">Admin Login</h2>
               <div className="mt-4">
                 <label className="block font-medium">Username</label>
                 <input type="text" value ={fullName} onChange={(e) => setFullName(e.target.value)} className="w-full p-2 border rounded mt-1" placeholder="Enter Username" />
@@ -145,39 +142,89 @@ export default function AuthPage() {
             </>
         ) : page === "register" ? (
           <>
-            <p className="text-xl font-bold text-center text-blue-900">AI Based CMO Gallery</p>
-            <h2 className="text-xl font-bold text-center text-blue-900">Register</h2>
+          <p className="text-[32px] font-[Poppins] font-bold leading-[38.4px] tracking-[-0.8px] text-center text-[#170645]">
+              AI Based CMO Gallery
+            </p>
+            <h2 className="text-[16px] font-[Poppins] font-normal leading-[25.6px] tracking-[0px] text-center text-[#170645]">
+              One Click Download
+            </h2>
 
-            <input type="text" placeholder="Full Name" value={fullName} onChange={(e) => setFullName(e.target.value)} className="border w-full p-2 rounded-md mb-4" />
-            <input type="text" placeholder="Mobile No." value={mobile} onChange={(e) => setMobile(e.target.value)} className="border w-full p-2 rounded-md mb-4" />
-            <input type="email" placeholder="Email Id" value={email} onChange={(e) => setEmail(e.target.value)} className="border w-full p-2 rounded-md mb-4" />
-            <input type="password" placeholder="Create Your Password" value={password} onChange={(e) => setPassword(e.target.value)} className="border w-full p-2 rounded-md mb-4" />
+            {/* Google Sign Up Button */}
+            <button className="flex items-center justify-center w-full border border-gray-300 rounded-full p-3 mt-5 text-gray-700 font-medium hover:bg-gray-100 transition">
+              <img src="/google-icon.png" alt="Google" className="w-5 h-5 mr-3" />
+              Sign Up With Google
+            </button>
 
+            {/* Separator */}
+            <div className="flex items-center my-6">
+              <hr className="flex-grow border-gray-300" />
+              <span className="mx-3 text-gray-400">Or, Sign Up With Your Email</span>
+              <hr className="flex-grow border-gray-300" />
+            </div>
+
+            {/* Input Fields - Updated Layout */}
+            <div className="space-y-4">
+              <div className="flex space-x-3">
+                <input
+                  type="text"
+                  placeholder="Full Name"
+                  value={fullName}
+                  onChange={(e) => setFullName(e.target.value)}
+                  className="w-1/2 p-3 border border-gray-300 rounded-full focus:outline-none focus:ring-2 focus:ring-purple-500"
+                />
+                <input
+                  type="text"
+                  placeholder="Mobile No."
+                  value={mobile}
+                  onChange={(e) => setMobile(e.target.value)}
+                  className="w-1/2 p-3 border border-gray-300 rounded-full focus:outline-none focus:ring-2 focus:ring-purple-500"
+                />
+              </div>
+              <input
+                type="email"
+                placeholder="Email Id"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+                className="w-full p-3 border border-gray-300 rounded-full focus:outline-none focus:ring-2 focus:ring-purple-500"
+              />
+              <input
+                type="password"
+                placeholder="Create Your Password"
+                value={password}
+                onChange={(e) => setPassword(e.target.value)}
+                className="w-full p-3 border border-gray-300 rounded-full focus:outline-none focus:ring-2 focus:ring-purple-500"
+              />
+            </div>
+            {/* Sign In Link */}
+            <p className="text-center text-gray-600 mt-4">
+              Already Registered?{" "}
+              <a href="/login" className="text-purple-900 font-bold">
+                Sign In
+              </a>
+            </p>
+            {/* Sign Up Button */}
+            <button
+              onClick={() => setShowPopup(true)}
+              className="w-full mt-0 p-3 bg-purple-900 text-yellow-400 font-bold rounded-full hover:bg-purple-800 transition"
+            >
+              Sign Up
+            </button>
+            {/* Success Popup */}
+            {showPopup && (
+              <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 z-50">
+                <div className="bg-white p-6 rounded-lg shadow-lg w-[90%] sm:w-[400px] text-center">
+                  <h2 className="text-xl font-bold text-blue-900">✅ Registration Successful!</h2>
                   <button
-                      onClick={() => {
-                      setShowPopup(true); // Show success popup
+                    onClick={() => {
+                      setShowPopup(false);
+                      setPage("login");
                     }}
-                      className="w-full bg-blue-900 text-white p-2 rounded-md"
-                    >
-                      Sign Up
+                    className="mt-6 w-full bg-green-500 text-white p-2 rounded-md hover:bg-green-600 transition duration-300"
+                  >
+                    OK
                   </button>
-
-                {/* Success Popup */}
-              {showPopup && (
-                <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50">
-                  <div className="bg-white p-6 rounded-lg shadow-lg">
-                    <h2 className="text-xl font-bold text-center text-blue-900">Registration Successful!</h2>
-                    <button
-                       onClick={() => {
-                        setShowPopup(false); // Close popup
-                        setPage("login"); // Redirect to login page
-                      }}
-                      className="mt-4 w-full bg-green-500 text-white p-2 rounded-md"
-                    >
-                      OK
-                    </button>
-                  </div>
                 </div>
+              </div>
               )}
           </>
         ) : page === "verification" ? (
@@ -224,7 +271,7 @@ export default function AuthPage() {
       <div className="hidden md:flex md:w-1/2 p-10 ">
         <img src={images[currentImage]} 
     alt="Slideshow" 
-    className="w-[700px] h-[700px] absolute top-[20px] left-[800px] 
+    className="w-[750px] h-[600px] absolute top-[60px] left-[750px] 
              rounded-tl-[30px] rounded-br-[30px]" />
       </div>
     </div>

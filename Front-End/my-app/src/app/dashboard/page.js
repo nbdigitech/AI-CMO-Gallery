@@ -46,7 +46,6 @@ export default function Dashboard() {
   const router = useRouter();
   const [search, setSearch] = useState("");
   const [showFilter, setShowFilter] = useState(false);
-
   return (
     <div className="min-h-screen bg-[rgba(240,240,240,1)]-100">
      <nav className="w- full h-[80px] bg-white shadow-md shadow-[rgba(240,240,240,1)] px -6 py-3 flex items-center justify-between">
@@ -60,11 +59,11 @@ export default function Dashboard() {
                     className="w-[71px] h-[71px] ml-[10px]" // Adjusted left margin so it doesn't overlap
                   />
                   {/* Search Bar & Filter Button */}
-                  <div className="flex items-center border border-[rgba(240,240,240,1)] rounded-full overflow-hidden bg-[rgba(236,236,236,1)] w-[1214px] h-[45px] px-3">
+                  <div className="flex items-center border border-[rgba(240,240,240,1)] rounded-full overflow-hidden bg-[rgba(236,236,236,1)] w-[1000px] h-[45px] px-3">
                     {/* Filter Button */}  
                     <button
                       onClick={() => setShowFilter(true)}
-                      className="px-4 py-2 rounded-full font-[Inter] font-medium text-[14px] leading-[16.8px] tracking-[0%]  text-[rgba(104,104,104,1)]  flex items-center gap-2"
+                      className="px-4 py-2 rounded-full font-[Inter] font-medium text-[14px] leading-[15.8px] tracking-[0%]  text-[rgba(104,104,104,1)]  flex items-center gap-2 ml-[-10px]"
                     >
                       Filter
                       <div className="w-[12px] h-[12px]  border-[rgba(104,104,104,1)]">
@@ -104,13 +103,13 @@ export default function Dashboard() {
           </div>
           <button
                 className="w-[150px] h-[40px] bg-[rgba(23,6,69,1)] text-[rgba(255,225,0,1)] rounded-[20px] shadow-[0px_4px_36px_0px_rgba(23,6,69,0.5)] 
-                flex items-center justify-center px-2 py-2 gap-2 transition-all ml-[20px] mr-6"
+                flex items-center justify-center px-2 py-1 gap-1 transition-all ml-[-400px] mr-[6px]"
                 onClick={() => router.push("/dashboard/uploadphoto")} // Adjust navigation as needed
               >
                 Search
           </button>
                 {/* Right Section: Profile Icon */}
-                <button className="w-12 h-15 rounded-full border border-gray-300 overflow-hidden ">
+                <button className="w-9 h-10 rounded-full border border-gray-300 flex items-center justify-center overflow-hidden ml-[-150]">
                   <img src="/pro.png" alt="User Profile" className="w-full h-full object-cover" />
           </button>
         </nav>
@@ -172,7 +171,7 @@ export default function Dashboard() {
                         ].map((event, index) => (
                           <label
                             key={index}
-                            className="flex items-center gap-2 bg-gray-100 p-2 rounded-md border border-gray-300 hover:border-purple-500 cursor-pointer"
+                            className="flex items-center gap-2 bg-gray-100 p-2 rounded-full border border-gray-300 hover:border-[#170645] cursor-pointer"
                           >
                             <input type="checkbox" className="w-4 h-4" />
                             {event}
@@ -197,7 +196,7 @@ export default function Dashboard() {
                         ].map((category, index) => (
                           <label
                             key={index}
-                            className="flex items-center gap-2 bg-gray-100 p-2 rounded-md border border-gray-300 hover:border-purple-500 cursor-pointer"
+                            className="flex items-center gap-2 bg-gray-100 p-2 rounded-full border border-gray-300 hover:border-[#170645] cursor-pointer"
                           >
                             <input type="checkbox" className="w-4 h-4" />
                             {category}
@@ -243,7 +242,7 @@ export default function Dashboard() {
                         ].map((district, index) => (
                           <label
                             key={index}
-                            className="flex items-center gap-2 bg-gray-100 p-2 rounded-md border border-gray-300 hover:border-purple-500 cursor-pointer"
+                            className="flex items-center gap-2 bg-gray-100 p-2 rounded-full border border-gray-300 hover:border-[#170645] cursor-pointer"
                           >
                             <input type="checkbox" className="w-4 h-4" />
                             {district}
