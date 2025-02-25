@@ -88,7 +88,7 @@ export default function AuthPage() {
       <div className="relative flex flex-col items-center justify-start full-h-screen pt-[41px] "></div>
       <img src="/CG logo.webp" alt="Logo" className="w-[119px] h-[105px] absolute top-[2px] left-1/4 transform -translate-x-1/4" />
       <div className=" absolute fixed top w-[516px] h-[526px] 
-             top-[140px] left-[140px] 
+             top-[120px] left-[90px] 
              radius-[16px] p-[48px] 
              pr-[40px] pb-[60px] pl-[40px] 
              gap-[24px] bg-white shadow-lg rounded-[30px]">
@@ -125,12 +125,12 @@ export default function AuthPage() {
                 <button className="text-[#170645]hover:underline">Terms of Service</button>
             </div>
             </div>
-            <div className="w-[204px] h-[30px] absolute top-[570px] left-[150px] bg-white-500 text-center text-black text-[14px] font-medium leading-[22.4px] tracking-[0px] font-inter whitespace-nowrap flex items-center justify-center mt-auto">
+            <div className="w-[204px] h-[30px] absolute top-[530px] left-[150px] bg-white-500 text-center text-black text-[14px] font-medium leading-[22.4px] tracking-[0px] font-inter whitespace-nowrap flex items-center justify-center mt-auto">
               Initiative By DPR Chhattisgarh
             </div>
           </>
 
-          /* work in this admin part*/
+          /* aayush  work in this admin part only*/
           ) : page === "admin" ? (
             <>
             <p className="text-[32px] font-[Poppins] font-bold leading-[38.4px] tracking-[-0.8px] text-center text-[#170645]">AI Based CMO Gallery</p>
@@ -279,21 +279,43 @@ export default function AuthPage() {
           </>
         ) : null}
       </div>
-      <div className="hidden md:flex md:w-1/2 p-10 ">
-        <img src={images[currentImage]} 
-    alt="Slideshow" 
-    className="w-[750px] h-[600px] absolute top-[60px] left-[750px] 
-             rounded-tl-[30px] rounded-br-[30px]" />
-        {images[currentImage] === "/CMpic.png" && (
-            <div className="absolute top-[450px] left-[650px] 
-                    text-white text-2xl font-bold 
-                    bg-black bg-opacity-50 
-                    w-[641px] h-[140px] 
-                    flex items-center justify-center
-                    rounded gap-[32px]">
-              cII young indians conference
+           <div className="hidden md:flex md:w-1/2 p-10 ">
+        <img 
+          src={images[currentImage]} 
+          alt="Slideshow" 
+          className="w-[750px] h-[600px] absolute top-[50px] left-[650px] 
+                    rounded-tl-[30px] rounded-br-[30px] z-[0] bg-opacity-20 px-4 py-2 rounded-md 
+                            cursor-pointer hover:bg-opacity-30 transition-all " 
+             />
+        {images[currentImage] === "/CMpic.png" &&
+        (
+          <div className="absolute inset-0 flex items-center justify-center">
+                <img 
+                  src="/play button.png"  // Replace with your play icon path
+                  alt="Play Button" 
+                  className=" absolute top-1/2 left-[75%]  transform -translate-x-1/2 w-20 h-20 opacity-90 cursor-pointer hover:opacity-100"
+                />
+          <div className="mt-[10px] absolute top-[450px] left-[680px] 
+                          w-[641px] h-auto 
+                          text-white font-bold 
+                          text-[48px] leading-[48px] 
+                          tracking-[-0.8px] 
+                          flex flex-col items-center justify-center
+                          font-[Poppins] 
+                          bg-black bg-opacity-20  
+                          px-6 py-4 rounded-lg z-[2]">
+            {/* Main Text */}
+            <span>CII Young Indians Conference</span>
+
+            {/* View More Button */}
+            <div className="mt-[-1px] ml-[-20px] text-[20px] font-medium text-white 
+                            bg-opacity-20 px-800 py-0 rounded-md 
+                            cursor-pointer hover:bg-opacity-30 transition-all justify-start">
+              View More ›
             </div>
-          )}
+          </div>
+          </div> 
+        )}
       </div>
     </div>
   );

@@ -8,7 +8,7 @@ export default function Navbar() {
   const [search, setSearch] = useState("");
 
   return (
-    <nav className="w- full h-[80px] bg-white shadow-md shadow-[rgba(240,240,240,1)] px -6 py-3 flex items-center justify-between">
+    <nav className=" fixed inset-0 w- full h-[80px] bg-white shadow-md shadow-[rgba(240,240,240,1)] px -6 py-3 flex items-center justify-between">
                  <div className="flex items-center justify-between w-full px-4">
                    {/* Left Section: Logo & Filter Button */}
                    <div className="flex items-center gap-6">
@@ -19,7 +19,7 @@ export default function Navbar() {
                        className="w-[71px] h-[71px] ml-[10px]" // Adjusted left margin so it doesn't overlap
                      />
                      {/* Search Bar & Filter Button */}
-                     <div className="flex items-center border border-[rgba(240,240,240,1)] rounded-full overflow-hidden bg-[rgba(236,236,236,1)] w-[1100px] h-[45px] px-3">
+                     <div className="flex items-center border border-[rgba(240,240,240,1)] rounded-full overflow-hidden bg-[rgba(236,236,236,1)] w-[1000px] h-[45px] px-3">
                        {/* Filter Button */}  
                        <button
                          className="px-4 py-2 rounded-full font-[Inter] font-medium text-[14px] leading-[15.8px] tracking-[0%]  text-[rgba(104,104,104,1)]  flex items-center gap-2 ml-[-10px]"

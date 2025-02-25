@@ -23,7 +23,7 @@ import { FiShare , FiDownload , FiLink , } from "react-icons/fi";
 import { FaChevronDown } from "react-icons/fa"
 
 const images = [
-  { src: "/CMpic.png", title: "CII Young Indians Conference" },
+  { src: "/CMpic.png", title: "CII Young Indians Conference" , count: 250 },
   { src: "/F3.png", title: "CII Young Indians Conference" },
   { src: "/CMpic.png", title: "CII Young Indians Conference" },
   { src: "/F4.png", title: "CII Young Indians Conference" },
@@ -120,7 +120,6 @@ export default function Dashboard() {
             <div key={index} className="bg-white p-4 rounded-lg ">
               <img src={image.src} alt={image.title} className="w-full h-70 rounded-md" />
               <h3 className=" text-[20px] font-bold tracking-[0.0em] capitalize text-black mt-4">{image.title}</h3>
-
               <div className="flex gap-[15px] items-center mt-5">
                 {/* Share Button */}
                 <button
@@ -292,97 +291,81 @@ export default function Dashboard() {
                   </div>
                 </div>
       )}
-      <footer className="bg-gray-300 bg-rgba(236, 236, 236, 1)   text-black text-center py-4">
-        <div className="max-w-7xl mx-auto">
-          <div className="grid grid-cols-1 md:grid-cols-4 gap-8 text-left">
-            <div>
-              <h3 className="font-bold text-lg text-gray-800 mb-2">Districts</h3>
-              <ul className="text-sm text-gray-600 grid grid-cols-2 gap-1">
-                <li>Bijapur</li>
-                <li>Sukma</li>
-                <li>Dantewada</li>
-                <li>Bastar</li>
-                <li>Kondagaon</li>
-                <li>Narayanpur</li>
-                <li>Kanker</li>
-                <li>Kawardha</li>
-                <li>Rajnandgaon</li>
-                <li>Durg</li>
-                <li>Bemetara</li>
-                <li>Dhamtari</li>
-                <li>Gariaband</li>
-                <li>Raipur</li>
-                <li>Baloda Bazar</li>
-                <li>Mahasamund</li>
-                <li>Bilaspur</li>
-                <li>Mungeli</li>
-                <li>Korba</li>
-                <li>Janjgir-Champa</li>
-                <li>Raigarh</li>
-                <li>Korea</li>
-                <li>Surajpur</li>
-                <li>Surguja</li>
-                <li>Balrampur</li>
-              </ul>
-            </div>
-            <div>
-              <h3 className="font-bold text-lg text-gray-800 mb-2">Features</h3>
-              <ul className="text-sm text-gray-600">
-                <li>Home</li>
-                <li>Copyright Policy</li>
-                <li>Disclaimer</li>
-                <li>Site Map</li>
-                <li>Hyperlink Policy</li>
-                <li>Terms and Conditions</li>
-              </ul>
-            </div>
-            <div>
-              <h3 className="font-bold text-lg text-gray-800 mb-2">Reach Us</h3>
-              <p className="text-sm text-gray-600 flex items-center gap-2">
-                <FaPhone /> <span>+91-771-2221614</span>
-              </p>
-              <p className="text-sm text-gray-600 flex items-center gap-2">
-                <FaEnvelope /> <span>dprcgh@gmail.com</span>
-              </p>
-              <p className="text-sm text-gray-600 flex items-center gap-2">
-                <FaMapMarkerAlt /> Directorate of Public Relations, Naya Raipur, Chhattisgarh, 492001
-              </p>
-            </div>
-            <div>
-            <div>
-                  <h3 className="font-bold text-lg text-gray-800 mb-2">Download Our App</h3>
-                  <div className="flex gap-4 mt-2">
-                    <button className="flex items-center gap-2 border px-4 py-2 rounded-md shadow hover:bg-gray-100">
-                      <FaGooglePlay className="text-green-600" /> Play Store
-                    </button>
-                    <button className="flex items-center gap-2 border px-4 py-2 rounded-md shadow hover:bg-gray-100">
-                      <FaApple className="text-black" /> App Store
-                    </button>
-                  </div>
-                  <div className="flex justify-center gap-4 mt-6">
-                    <img src="CG logo.webp" alt="Logo 1" className="w-14 h-14" />
-                    <img src="/pic 2.png" alt="Logo 2" className="w-14 h-14" />
-                    <img src="/pic 3.png" alt="Logo 3" className="w-14 h-14" />
-                    <img src="/pic 4.png" alt="Logo 4" className="w-14 h-14" />
-                  </div>
-                </div>
-              </div>
+       <footer className="relative bg-gray-200 text-black py-6">
+      <div className="max-w-[1621px] mx-auto flex flex-col min-h-[600px]">
+
+        {/* District List */}
+        <div className="absolute top-[45px] left-[90px] w-[1000px] h-[114px]">
+          <h3 className="font-bold text-lg text-gray-800 mb-1">Districts List</h3>
+          <p className="text-sm text-gray-600">
+            Bijapur | Sukma | Dantewada | Bastar | Kondagaon | Narayanpur | Kanker | Kawardha | Balod | Rajnandgaon | Durg |
+            Bemetara | Dhamtari | Gariaband | Raipur | Baloda Bazar | Mahasamund | Bilaspur | Mungeli | Korba |
+            Janjgir-Champa | Raigarh | Jashpur | Korea | Surajpur | Surguja | Balrampur
+          </p>
+        </div>
+         
+        {/* Featured Links */}
+        <div className="absolute top-[187px] left-[90px] w-[500px] h-[61px] border border-gray-300">
+          <h3 className="font-bold text-lg text-gray-800 mb-2">Featured Links</h3>
+          <p className="text-sm text-gray-600">
+            Home | Copyright Policy | Disclaimer | Site Map | Hyperlink Policy | Privacy Policy | Terms And Conditions | Terms Of Use
+          </p>
+        </div>
+
+        {/* Download Our App */}
+        <div className="absolute top-[299px] left-[100px] w-[300px] h-[93px] text-left">
+          <h3 className="font-bold text-lg text-gray-800 mb-2">Download Our App</h3>
+          <div className="flex justify-center gap-4">
+          <button className="flex items-center gap-2 border px-4 py-2 rounded-md shadow bg-black text-white">
+  <FaGooglePlay className="text-white" /> Play Store
+</button>
+<button className="flex items-center gap-2 border px-4 py-2 rounded-md shadow bg-black text-white">
+  <FaApple className="text-white" /> App Store
+</button>
           </div>
         </div>
-        <div className="flex justify-center gap-6 mt-6">
-        <h3 className="font-bold text-lg text-gray-800 mb-2">Follow Us</h3>
+        <div className="absolute top-[400px] left-[70px] w-[300px] h-[56px] text-left">
+            <div className="flex items-center gap-2 border px-4 py-2 mt -10">
+              <img src="CG logo.webp" alt="Logo 1" className="w-[120px] h-[56px]" />
+              <img src="/pic 2.png" alt="Logo 2" className="w-[120px] h-[56px]" />
+              <img src="/pic 3.png" alt="Logo 3" className="w-[56px] h-[56px]" />
+              <img src="/pic 4.png" alt="Logo 4" className="w-[56px] h-[56px]" />
+            </div>
+          </div>
+        {/* Reach Us */}
+        <div className="absolute top-[187px] left-[1000px] w-[300px] h-[155px] text-left">
+          <h3 className="font-bold text-lg text-gray-800  justify-start mb-2">Reach Us</h3>
+          <p className="text-sm text-gray-600 flex justify-start items-center gap-2">
+            <FaMapMarkerAlt /> Directorate of Public Relations, Naya Raipur, Chhattisgarh, 492001
+          </p>
+          <p className="text-sm text-gray-600 flex justify-start items-center gap-2">
+            <FaPhone /> +91-771-2221614
+          </p>
+          <p className="text-sm text-gray-600 flex justify-start items-center gap-2">
+            <FaEnvelope /> dprcgh@gmail.com
+          </p>
+        </div>
+
+        {/* Follow Us */}
+        <div className="absolute top-[409px] left-[1000px] w-[205px] h-[76px] text-left">
+          <h3 className="font-bold text-lg text-gray-800 mb-2">Follow Us</h3>
+          <div className="flex justify-end gap-4">
           <a href="#" className="text-blue-600"><FaFacebookF size={20} /></a>
           <a href="#" className="text-pink-500"><FaInstagram size={20} /></a>
           <a href="#" className="text-red-600"><FaYoutube size={20} /></a>
           <a href="#" className="text-blue-500"><FaLinkedinIn size={20} /></a>
           <a href="#" className="text-gray-700"><FaTwitter  size={20} /></a>
+          </div>
         </div>
+      </div>
 
-        <p className="mt-6 text-sm text-gray-500 text-center">
-          © 2025 CMO Gallery | Initiative by DPR Chhattisgarh
-        </p>
-
-      </footer>
+      {/* Footer Bottom */}
+      <div className="w-full py-4 mt-auto">
+    <p className="text-sm text-gray-500 text-center">
+      © 2025 CMO Gallery | Initiative by DPR Chhattisgarh
+    </p>
+  </div>
+    </footer>
     </div>
   );
 }

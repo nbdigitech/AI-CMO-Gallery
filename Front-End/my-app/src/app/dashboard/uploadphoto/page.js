@@ -43,9 +43,9 @@ export default function UploadPhotoPage() {
   return (
     <div className="full-h-screen bg -[rgb(244, 240, 240)] ">
       <Navbar />
-      <main className="flex flex-col items-center justify-center w-full px-4 py-10 bg-[rgb(244, 240, 240)]">
-        <div className="  rounded-2xl px-8 py-6 w-full max-w-lg text-center relative -top-0  ">
-          <h2 className="text-2xl font-extrabold text-[#170645]">Upload Photo</h2>
+      <main className=" flex flex-col items-center justify-center w-full px-4 py-10 bg-[rgb(244, 240, 240)]">
+        <div className="   rounded-2xl px-8 py-6 w-full max-w-lg text-center relative  pt-12  ">
+          <h2 className=" text-2xl font-extrabold text-[#170645]">Upload Photo</h2>
           <p className="text-[#170645] text-sm mt-1"> & Event Details</p>
           <div className="flex items-center my-6"><hr className="flex-grow border-t border-gray-300" /><span className="px-3 text-gray-500 text-center ">Event Details</span><hr className="flex-grow border-t border-gray-300" /></div>
           <div className="mt-6 relative">
