@@ -22,7 +22,7 @@ export default function AdminLogin() {
 
   return (
     <div className="flex h-screen bg-blue-900 items-center justify-center">
-      {/* Login Card */}
+      {/* Login Card  don t not work in this part this page is only for dependcies purpose don't delete this page also*/}
       <div className="bg-white p-8 rounded-lg shadow-lg w-96">
         <div className="flex justify-center mb-4">
           <img src="/logo.png" alt="CG Logo" className="h-12" />

@@ -78,7 +78,7 @@ export default function AdminDashboard() {
             className="border p-2 rounded-md text-sm bg-purple-700 text-white hover:bg-purple-800"
             onClick={() => {
               localStorage.removeItem("isAdmin");
-              window.location.href = "/";
+              window.location.href = "/";         /* this will redirect to  main login page*/
             }}
           >
             Logout
@@ -91,8 +91,8 @@ export default function AdminDashboard() {
       {/* Hero Section */}
       <div className="bg-gradient-to-r from-purple-900 to-indigo-900 text-white p-12 flex justify-between items-center rounded-b-[100px]">
         <div>
-          <h1 className="text-5xl font-bold">Welcome To CMO Gallery</h1>
-          <p className="text-lg mt-2 mb-4">Here's Everything You Need To Know To Get Started.</p>
+          <h1 className="text-5xl font-bold">Welcome To CMO Gallery</h1> {/*font-family: Inter; font-weight: 700; font-size: 54.96px;  CMO--> line-height: 88.49px;letter-spacing: 0%; font-family: Inter;font-weight: 500;font-size: 30.53px; line-height: 49.16px; letter-spacing: 0%;*/}
+          <p className="text-lg mt-2 mb-4">Here's Everything You Need To Know To Get Started.</p> {/*font-family: Inter; font-weight: 500;font-size: 30.53px; line-height: 49.16px; letter-spacing: 0%; */}
           <p className="text-xl font-semibold mt-6">Rajyotsava 2024 New Raipur</p>
         </div>
         <img src="/CM.png" alt="admin" className="w-24 h-40 drop-shadow-lg transition-transform duration-300 hover:scale-105" />

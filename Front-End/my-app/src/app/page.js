@@ -1,7 +1,12 @@
 "use client";
+import { Poppins } from "next/font/google";
 import { useState, useEffect, useRef } from "react";
 import { useRouter } from "next/navigation";
-
+const poppins = Poppins({
+  subsets: ["latin"],
+  weight: ["300", "400", "500", "600", "700"],
+  variable: "--font-poppins", // CSS Variable for Tailwind
+});
 export default function AuthPage() {
   const router = useRouter();
   const images = ["/CMpic.png", "/imgB.png"];
@@ -12,7 +17,7 @@ export default function AuthPage() {
   const [errorMessage, setErrorMessage] = useState("");
   const correctOtp = ["1", "2", "3", "4", "5"];
   const otpRefs = useRef([]);
-
+  
   // States for registration & profile update
   const [fullName, setFullName] = useState("");
   const [mobile, setMobile] = useState("");
@@ -85,10 +90,11 @@ export default function AuthPage() {
       <div className=" absolute fixed top w-[516px] h-[526px] 
              top-[140px] left-[140px] 
              radius-[16px] p-[48px] 
-             pr-[40px] pb-[56px] pl-[40px] 
+             pr-[40px] pb-[60px] pl-[40px] 
              gap-[24px] bg-white shadow-lg rounded-[30px]">
         {page === "login" ? (
           <>
+          <div className={`${poppins.variable} font-sans`}></div>
             <h2 className="text-[32px] font-[Poppins] font-bold leading-[38.4px] tracking-[-0.8px] text-center text-[#170645] ">AI Based CMO Gallery</h2>
             <p className="text-[16px] font-[Poppins] font-normal leading-[25.6px] tracking-[0px] text-center text-[#170645]">One Click Download</p>
             <button className="flex items-center justify-center w-full border p-2 mt-4 rounded-full text-background: rgba(23, 6, 69, 1);-600 hover:bg-gray-200">
@@ -123,6 +129,8 @@ export default function AuthPage() {
               Initiative By DPR Chhattisgarh
             </div>
           </>
+
+          /* work in this admin part*/
           ) : page === "admin" ? (
             <>
             <p className="text-[32px] font-[Poppins] font-bold leading-[38.4px] tracking-[-0.8px] text-center text-[#170645]">AI Based CMO Gallery</p>
@@ -142,21 +150,19 @@ export default function AuthPage() {
             </>
         ) : page === "register" ? (
           <>
-          <p className="text-[32px] font-[Poppins] font-bold leading-[38.4px] tracking-[-0.8px] text-center text-[#170645]">
+          <p className="text-[32px] font-[Poppins] font-bold leading-[38.4px] tracking-[-0.8px] text-center text-[#170645] -mt-3">
               AI Based CMO Gallery
             </p>
             <h2 className="text-[16px] font-[Poppins] font-normal leading-[25.6px] tracking-[0px] text-center text-[#170645]">
               One Click Download
             </h2>
-
             {/* Google Sign Up Button */}
-            <button className="flex items-center justify-center w-full border border-gray-300 rounded-full p-3 mt-5 text-gray-700 font-medium hover:bg-gray-100 transition">
-              <img src="/google-icon.png" alt="Google" className="w-5 h-5 mr-3" />
+            <button className="flex items-center justify-center w-full border border-gray-300 rounded-full p-3 mt-5 text-[#170645] font-medium hover:bg-gray-100 transition">
+              <img src="/google pic.png" alt="Google" className="w-5 h-5 mr-3" />
               Sign Up With Google
             </button>
-
             {/* Separator */}
-            <div className="flex items-center my-6">
+            <div className="flex items-center my-4">
               <hr className="flex-grow border-gray-300" />
               <span className="mx-3 text-gray-400">Or, Sign Up With Your Email</span>
               <hr className="flex-grow border-gray-300" />
@@ -166,49 +172,54 @@ export default function AuthPage() {
             <div className="space-y-4">
               <div className="flex space-x-3">
                 <input
-                  type="text"
+                  type="text [#170645]"
                   placeholder="Full Name"
                   value={fullName}
                   onChange={(e) => setFullName(e.target.value)}
-                  className="w-1/2 p-3 border border-gray-300 rounded-full focus:outline-none focus:ring-2 focus:ring-purple-500"
+                  className="w-1/2 p-3 border border-gray-300 rounded-full focus:outline-none focus:ring-2 focus:ring-[#170645]"
                 />
                 <input
-                  type="text"
+                  type="text [#170645]"
                   placeholder="Mobile No."
                   value={mobile}
                   onChange={(e) => setMobile(e.target.value)}
-                  className="w-1/2 p-3 border border-gray-300 rounded-full focus:outline-none focus:ring-2 focus:ring-purple-500"
+                  className="w-1/2 p-3 border border-gray-300 rounded-full focus:outline-none focus:ring-2 focus:ring-[#170645]"
                 />
               </div>
               <input
-                type="email"
+                type="email text [#170645]"
                 placeholder="Email Id"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
-                className="w-full p-3 border border-gray-300 rounded-full focus:outline-none focus:ring-2 focus:ring-purple-500"
+                className="w-full p-3 border border-gray-300 rounded-full focus:outline-none focus:ring-2 focus:ring-[#170645]"
               />
               <input
-                type="password"
+                type="password text [#170645]"
                 placeholder="Create Your Password"
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
-                className="w-full p-3 border border-gray-300 rounded-full focus:outline-none focus:ring-2 focus:ring-purple-500"
+                className="w-full p-3 border border-gray-300 rounded-full focus:outline-none focus:ring-2 focus:ring-[#170645]"
               />
             </div>
-            {/* Sign In Link */}
-            <p className="text-center text-gray-600 mt-4">
-              Already Registered?{" "}
-              <a href="/login" className="text-purple-900 font-bold">
-                Sign In
-              </a>
-            </p>
             {/* Sign Up Button */}
             <button
               onClick={() => setShowPopup(true)}
-              className="w-full mt-0 p-3 bg-purple-900 text-yellow-400 font-bold rounded-full hover:bg-purple-800 transition"
+              className="w-full bg-[#170645]  text-[#FFE100] p-2 rounded-full mt-3"
             >
               Sign Up
             </button>
+            {/* Sign In Link */}
+            <p className="text-center text-gray-600 mt-2">
+              Already Registered?{" "}
+              <a href="/login" className="text-background: rgba(0, 0, 0, 1); font-bold">
+                Sign In
+              </a>
+            </p>
+            <div className="flex justify-center gap-4  w-full mt-2">
+                <button className="text-[#170645] hover:underline">Customer Support</button>
+                <button className="text-[#170645]hover:underline">Terms of Service</button>
+            </div>
+            
             {/* Success Popup */}
             {showPopup && (
               <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 z-50">
@@ -235,7 +246,7 @@ export default function AuthPage() {
               {otp.map((digit, index) => (
                 <input
                   key={index}
-                  type="text"
+                  type="text [#170645]"
                   maxLength="1"
                   value={digit}
                   ref={(el) => (otpRefs.current[index] = el)}
@@ -253,8 +264,8 @@ export default function AuthPage() {
           <>
             <h2 className="text-[32px] font-[Poppins] font-bold text-center leading-[38.4px] tracking-[-0.8px] text-[#170645] p-2 rounded-md">Update Profile</h2>
             <p className="text-[20px] font-[Poppins] font-normal leading-[25.6px] tracking-[0px] text-center text-[#170645] p-2 rounded-md">Update Below Details</p>
-            <input type="text" placeholder="Full Name" value={name} onChange={(e) => setName(e.target.value)} className="border w-full p-3 rounded-full mb-4" />
-            <input type="email" placeholder="Email" value={email} onChange={(e) => setEmail(e.target.value)} className="border w-full p-3 rounded-full mb-4" />
+            <input type="text [#170645]" placeholder="Full Name" value={name} onChange={(e) => setName(e.target.value)} className="border w-full p-3 rounded-full mb-4" />
+            <input type="email text [#170645]" placeholder="Email" value={email} onChange={(e) => setEmail(e.target.value)} className="border w-full p-3 rounded-full mb-4" />
             <select value={location} onChange={(e) => setLocation(e.target.value)} className="border w-full p-3 rounded-full mb-4">
               {chhattisgarhCities.map((city) => (
                 <option key={city} value={city}>
@@ -273,6 +284,16 @@ export default function AuthPage() {
     alt="Slideshow" 
     className="w-[750px] h-[600px] absolute top-[60px] left-[750px] 
              rounded-tl-[30px] rounded-br-[30px]" />
+        {images[currentImage] === "/CMpic.png" && (
+            <div className="absolute top-[450px] left-[650px] 
+                    text-white text-2xl font-bold 
+                    bg-black bg-opacity-50 
+                    w-[641px] h-[140px] 
+                    flex items-center justify-center
+                    rounded gap-[32px]">
+              cII young indians conference
+            </div>
+          )}
       </div>
     </div>
   );
