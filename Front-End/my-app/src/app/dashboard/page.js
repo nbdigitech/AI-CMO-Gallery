@@ -42,6 +42,8 @@ const images = [
 ];
 
 
+
+
 export default function Dashboard() {
   const router = useRouter();
   const [search, setSearch] = useState("");
@@ -114,31 +116,52 @@ export default function Dashboard() {
           </button>
         </nav>
       <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-3 p-6">
-        {images
+      {images
           .filter((img) => img.title.toLowerCase().includes(search.toLowerCase()))
           .map((image, index) => (
-            <div key={index} className="bg-white p-4 rounded-lg ">
-              <img src={image.src} alt={image.title} className="w-full h-70 rounded-md" />
-              <h3 className=" text-[20px] font-bold tracking-[0.0em] capitalize text-black mt-4">{image.title}</h3>
+            <div
+              key={index}
+              className="bg-white p-4 rounded-lg group transition-all duration-300"
+            >
+              {/* Image Container with Hover Effect */}
+              <div className="relative rounded-[30px] overflow-hidden">
+                {/* Image */}
+                <img
+                  src={image.src}
+                  alt={image.title}
+                  className="w-full h-70 rounded-[30px] transition-all duration-300 ease-in-out group-hover:brightness-75"
+                />
+
+                {/* Hover Overlay */}
+                <div className="absolute inset-0 bg-black bg-opacity-50 flex justify-between items-end p-4 rounded-[30px] opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                  {/* "250 Photos" (Stacked Format - Left Side) */}
+                  <div className="text-left">
+                    <span className="text-white font-extrabold text-4xl leading-none block">250</span>
+                    <span className="text-white font-semibold text-lg block mt-[-5px]">Photos</span>
+                  </div>
+                  {/* "2 Nov 2024" (Right Side) */}
+                  <span className="text-white text-lg font-medium">2 Nov 2024</span>
+                </div>
+              </div>
+
+              {/* Title (Changes Background on Hover) */}
+              <h3
+                className="text-[20px] font-bold tracking-[0.0em] capitalize text-black mt-4 p-2 rounded-md transition-all duration-300 group-hover:text-[rgba(23,6,69,1)] group-hover:text-white"
+              >
+                {image.title}
+              </h3>
+
+              {/* Buttons (Change Background on Hover) */}
               <div className="flex gap-[15px] items-center mt-5">
-                {/* Share Button */}
-                <button
-                className="w-[30px] h-[30px] border border: 1px solid var(--P-Color-2, rgba(104, 104, 104, 1)) flex items-center justify-center rounded-full"
-              >
-                <FiShare size={18} className="text-rgba(104, 104, 104, 1)-500" />
-              </button>
-                {/* Copy Link Button */}
-              <button
-                  className="w-[30px] h-[30px] border border: 1px solid var(--P-Color-2, rgba(104, 104, 104, 1)) flex items-center justify-center rounded-full"
-                >
-                  <FiLink size={18} className="text-rgba(104, 104, 104, 1)-500" />
+                <button className="w-[30px] h-[30px] border border-gray-400 flex items-center justify-center rounded-full transition-all duration-300 group-hover:bg-[rgba(23,6,69,1)] group-hover:text-white">
+                  <FiShare size={18} className="text-gray-500 group-hover:text-white" />
                 </button>
-              {/* Download Button */}
-              <button
-                className="w-[30px] h-[30px] border border: 1px solid var(--P-Color-2, rgba(104, 104, 104, 1)) flex items-center justify-center rounded-full"
-              >
-                <FiDownload size={18} className="text-rgba(104, 104, 104, 1)-600" />
-              </button>
+                <button className="w-[30px] h-[30px] border border-gray-400 flex items-center justify-center rounded-full transition-all duration-300 group-hover:bg-[rgba(23,6,69,1)] group-hover:text-white">
+                  <FiLink size={18} className="text-gray-500 group-hover:text-white" />
+                </button>
+                <button className="w-[30px] h-[30px] border border-gray-400 flex items-center justify-center rounded-full transition-all duration-300 group-hover:bg-[rgba(23,6,69,1)] group-hover:text-white">
+                  <FiDownload size={18} className="text-gray-600 group-hover:text-white" />
+                </button>
               </div>
             </div>
           ))}
@@ -179,7 +202,6 @@ export default function Dashboard() {
                       </div>
                       <div className="border-b border-gray-300 my-4"></div>
                     </div>
-
                     {/* Category Section */}
                     <div className="mt-2">
                       <p className="text-lg font-semibold mb-2">Category</p>
@@ -308,7 +330,7 @@ export default function Dashboard() {
         <div className="absolute top-[187px] left-[90px] w-[500px] h-[61px] border border-gray-300">
           <h3 className="font-bold text-lg text-gray-800 mb-2">Featured Links</h3>
           <p className="text-sm text-gray-600">
-            Home | Copyright Policy | Disclaimer | Site Map | Hyperlink Policy | Privacy Policy | Terms And Conditions | Terms Of Use
+            Home | Copyright Policy |  Disclaimer | Site Map | Hyperlink Policy | Privacy Policy | Terms And Conditions | Terms Of Use
           </p>
         </div>
 

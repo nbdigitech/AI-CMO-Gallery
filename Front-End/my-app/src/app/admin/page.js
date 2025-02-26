@@ -11,7 +11,7 @@ export default function AdminLogin() {
   const handleAdminLogin = (e) => {
     e.preventDefault();
 
-    // Dummy authentication (Replace this with real authentication logic if needed)
+    // Dummy authentication (Replace this with real authentication logic if needed #only this part is imp because admin credientials are here)
     if (username === "admin" && password === "password123") {
       localStorage.setItem("isAdmin", "true"); // Store login status
       router.push("/admin/dashboard"); // Redirect to Admin Dashboard
