@@ -146,7 +146,7 @@ export default function Dashboard() {
 
               {/* Title (Changes Background on Hover) */}
               <h3
-                className="text-[20px] font-bold tracking-[0.0em] capitalize text-black mt-4 p-2 rounded-md transition-all duration-300 group-hover:text-[rgba(23,6,69,1)] group-hover:text-white"
+                className="text-[20px] font-bold tracking-[0.0em] capitalize text-black mt-4 p-2 rounded-md transition-all duration-300 group-hover:text-[rgba(23,6,69,1)]"
               >
                 {image.title}
               </h3>
@@ -339,11 +339,11 @@ export default function Dashboard() {
           <h3 className="font-bold text-lg text-gray-800 mb-2">Download Our App</h3>
           <div className="flex justify-center gap-4">
           <button className="flex items-center gap-2 border px-4 py-2 rounded-md shadow bg-black text-white">
-  <FaGooglePlay className="text-white" /> Play Store
-</button>
-<button className="flex items-center gap-2 border px-4 py-2 rounded-md shadow bg-black text-white">
-  <FaApple className="text-white" /> App Store
-</button>
+            <FaGooglePlay className="text-white" /> Play Store
+          </button>
+          <button className="flex items-center gap-2 border px-4 py-2 rounded-md shadow bg-black text-white">
+            <FaApple className="text-white" /> App Store
+          </button>
           </div>
         </div>
         <div className="absolute top-[400px] left-[70px] w-[300px] h-[56px] text-left">

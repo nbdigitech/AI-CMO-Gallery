@@ -107,7 +107,7 @@ export default function AuthPage() {
               placeholder="Mobile No."
               value={mobile}
               onChange={(e) => setMobile(e.target.value)}
-              className="border w-full p-2 rounded-full mb-9  bg-white text-[#170645] placeholder- white"
+              className="border w-full p-2 rounded-full mb-9  bg-white text-[#170645] placeholder- [#170645] "
             />
             <button onClick={() => setPage("verification")} className="w-full bg-[#170645]  text-[#FFE100] p-2 rounded-full">
               Sign - In
